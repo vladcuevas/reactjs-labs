@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+// import ReactDOM from 'react-dom/client';
+import {createRoot} from 'react-dom/client';
 import './index.css';
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
@@ -25,6 +26,11 @@ import App from './App';
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 // reportWebVitals();
 
-const element = React.createElement("h2")
+const root = document.getElementById("root") //div
+
+//In React element is the smallest building block
+const element = React.createElement("h2", {}, "Hello world!")
+
+createRoot(root).render(element)
 
 console.dir(element)
