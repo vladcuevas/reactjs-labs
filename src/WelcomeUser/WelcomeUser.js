@@ -1,4 +1,4 @@
-//Hero
+import React from 'react';
 
 export default function WelcomeUser(props) {
     const {username, notification} = props
