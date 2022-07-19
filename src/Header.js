@@ -11,32 +11,32 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 function Header() {
     return (
-        <Container className='header'>
+        <Container className='header' >
             <Row>
-                <Col md={4}>
+                <Col md={3}>
                     <div className="header__logo">
                         <LocalPharmacyIcon fontSize='large' className='header__logoImage' />
                         <h2 className='header__logoTitle'>E-Health</h2>
                     </div>
                 </Col>
-                <Col md={4}>
+                <Col md={3} className="w-50">
                 <div className="header__search">
                     <input type="text" className='header__searchInput' />
                     <SearchIcon className='header__searchIcon' />
                 </div>
                 </Col>
-                <Col md={4}>
+                <Col md={3}>
                     <Row className="header__nav h-auto">
-                        <Col md={4} className="nav__item">
-                            <Col md={2} className="nav__itemLineOne">Hello Guest</Col>
-                            <Col md={2} className="nav__itemLineTwo">Sign In</Col>
+                        <Col className="nav__item">
+                            <Col className="nav__itemLineOne">Hello Guest</Col>
+                            <Col className="nav__itemLineTwo">Sign In</Col>
                         </Col>
-                        <Col md={4} className="nav__item">
+                        <Col className="nav__item">
                             <span className="nav__itemLineOne">Your</span>
                             <span className="nav__itemLineTwo"> Shop</span>
                         </Col>
-                        <Col md={4} className="nav__item">
-                            <ShoppingBasketIcon className='itemBasket' />
+                        <Col className="nav__itemBasket">
+                            <ShoppingBasketIcon/>
                             <span className="nav__itemLineTwo nav__basketCount">0</span>
                         </Col>
                     </Row>

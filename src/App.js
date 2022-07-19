@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
+import Header from './Header';
+import Home from './Home'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import './Footer/Footer';
 import Login from './containers/Login/Login';
-import Navbar from './components/Navbar';
-import Header from './Header';
+import Footer from './Footer/Footer'
 
 // react bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -19,21 +20,9 @@ function App() {
           <Row>
             <Header className="text-center" />
           </Row>
-          <Row>
-            <Col md={3}>
-              Hello, Bootstrap!
-            </Col>
-            <Col md={3}>
-              Hello, Bootstrap!
-            </Col>
-            <Col md={3}>
-              Hello, Bootstrap!
-            </Col>
-            <Col md={3}>
-              Hello, Bootstrap!
-            </Col>
-          </Row>
         </Container>
+        <Home/>
+        <Footer></Footer>
       </div>
     )
 
