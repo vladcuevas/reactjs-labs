@@ -1,7 +1,6 @@
 import React from 'react'
 import "./Home.css"
-import Product from './Product'
-import { Row } from 'react-bootstrap';
+import Product from '../Product/Product'
 
 function Home() {
   return (
