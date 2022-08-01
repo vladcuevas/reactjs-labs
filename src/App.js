@@ -4,14 +4,10 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Link,
-  useNavigate,
-  useParams
 } from "react-router-dom";
 
 // react bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container, Row, Col } from 'react-bootstrap';
 // end react bootstrap
 
 import './App.css';
