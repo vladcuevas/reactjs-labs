@@ -18,7 +18,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home'
 
-import Login from './containers/Login/Login';
+import Login from './components/Login/Login';
 import Footer from './components/Footer/Footer'
 import Checkout from './components/Checkout/Checkout';
 import ErrorPage from './components/ErrorPage';
@@ -35,6 +35,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/login" element={<Login />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
           <Footer />
