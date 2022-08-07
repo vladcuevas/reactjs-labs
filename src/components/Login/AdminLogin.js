@@ -13,20 +13,8 @@ function AdminLogin() {
 
         signInWithEmailAndPassword(auth, email, password)
             .then(auth => {
-                navigate('/');
+                navigate('/admin/home');
             })
-            .catch(error => alert(error.message))
-
-    }
-
-    const register = e => {
-        e.preventDefault();
-
-        createUserWithEmailAndPassword(auth, email, password).then((auth) => {
-            if (auth) {
-                navigate('/');
-            }
-        })
             .catch(error => alert(error.message))
 
     }
@@ -44,13 +32,6 @@ function AdminLogin() {
 
                 <button type='submit' className='login__signInButton' onClick={signIn}>Sign In</button>
             </form>
-
-            <p>
-                By signing-in you agree to the E-Health Website Conditions of Use & Sale. Please
-                see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
-            </p>
-
-            <button className='login__registerButton' onClick={register}>Create your eShop Account</button>
         </div>
     )
 }
