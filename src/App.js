@@ -29,9 +29,9 @@ function App() {
       <BrowserRouter>
           <Header className="text-center" />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} / >
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="login/*" element={<Login />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
           <Footer />
