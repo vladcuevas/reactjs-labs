@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "./firebase";
+import { auth, signInWithEmailAndPassword, signOut } from "./firebase";
 import { Link, useNavigate } from "react-router-dom";
 
-function AdminLogin() {
+function AdminLogin({logout}) {
 
     let navigate = useNavigate();
     const [email, setEmail] = useState('');
@@ -17,6 +17,15 @@ function AdminLogin() {
             })
             .catch(error => alert(error.message))
 
+    }
+    
+    if (logout == 1) {
+        signOut(auth).then(() => {
+            console.log("Logged Out!")
+            navigate('/');
+        }).catch((error) => {
+            // An error happened.
+        })
     }
 
     return (

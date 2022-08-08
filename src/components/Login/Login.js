@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Login.css'
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
-    BrowserRouter,
     Routes,
     Route,
 } from "react-router-dom";
@@ -23,6 +22,7 @@ function Login() {
             <Routes>
                 <Route path="user" element={<UserLogin />} />
                 <Route path="admin" element={<AdminLogin />} />
+                <Route path="logout" element={<AdminLogin />} />
             </Routes>
         </div>
     )
