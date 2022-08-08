@@ -1,11 +1,11 @@
 .footer {
     align-items: center;
     background-color: #131921;
-    position: sticky;
-    top: 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
     z-index: 100;
 }
-
 
 .footer__logoTitle {
     text-decoration: none;
