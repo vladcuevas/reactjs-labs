@@ -8,6 +8,7 @@ import SellsReport from "../../components/Admin/Reports/Sells"
 import MedicinesReport from "../../components/Admin/Reports/ProductsReport"
 import OrdersReport from "../../components/Admin/Reports/Orders"
 import DateWiseReport from "../../components/Admin/Reports/DateWiseReport"
+import CustomerInfo from "../../components/Admin/CustomerInfo/CustomerInfo"
 
 import {
     Routes,
@@ -30,6 +31,7 @@ function AdminHome() {
                             <Route path="/reports/productsreport" element={<MedicinesReport />} />
                             <Route path="/reports/ordersreport" element={<OrdersReport />} />
                             <Route path="/reports/datewisereport" element={<DateWiseReport />} />
+                            <Route path="/customerinfo" element={<CustomerInfo />} />
                         </Routes>
                     </div>
                 </div>

@@ -19,6 +19,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import AssessmentIcon from '@mui/icons-material/Assessment';
+import GroupIcon from '@mui/icons-material/Group';
 
 function AdminProduct({ rowsPerPage }) {
   const [state, dispatch] = useStateValue()
@@ -36,6 +37,7 @@ function AdminProduct({ rowsPerPage }) {
           <Row>
             <Col><Link to="create/medicine/"><AddBoxIcon />Add Medicine</Link></Col>
             <Col><Link to="reports"><AssessmentIcon />Reports</Link></Col>
+            <Col><Link to="customerinfo"><GroupIcon />View Customer Info</Link></Col>
           </Row>
         </Container>
         <table className={styles.table}>
