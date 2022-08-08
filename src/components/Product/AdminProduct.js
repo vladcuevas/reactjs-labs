@@ -6,6 +6,11 @@ import TableFooter from "../TableFooter";
 import { useStateValue } from "../../StateProvider";
 
 import 'bootstrap/dist/css/bootstrap.min.css'
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import { Link } from 'react-router-dom';
 
 import productData from '../../data/products'
@@ -13,20 +18,26 @@ import productData from '../../data/products'
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import AddBoxIcon from '@mui/icons-material/AddBox';
+import AssessmentIcon from '@mui/icons-material/Assessment';
 
-function AdminProduct({rowsPerPage}) {
-  const [ state, dispatch ] = useStateValue()
-  const [ products ] = useState([...productData]);
+function AdminProduct({ rowsPerPage }) {
+  const [state, dispatch] = useStateValue()
+  const [products] = useState([...productData]);
 
   let data = products
 
-  const [ page, setPage ] = useState(1);
+  const [page, setPage] = useState(1);
   const { slice, range } = useTable(data, page, rowsPerPage);
 
   return (
     <div className="product">
       <div className="product__info">
-        <Link to="create/medicine/"><AddBoxIcon/>Add Medicine</Link>
+        <Container fluid>
+          <Row>
+            <Col><Link to="create/medicine/"><AddBoxIcon />Add Medicine</Link></Col>
+            <Col><Link to="reports"><AssessmentIcon />Reports</Link></Col>
+          </Row>
+        </Container>
         <table className={styles.table}>
           <thead className={styles.tableRowHeader}>
             <tr>

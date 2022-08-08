@@ -8,6 +8,7 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
+import Reports from "../Admin/Reports";
 
 function AdminHome() {
     return (
@@ -18,6 +19,7 @@ function AdminHome() {
                         <Routes>
                             <Route path="/" element={<AdminProduct rowsPerPage={4} />} />
                             <Route path="/create/medicine" element={<CreateProduct />} />
+                            <Route path="/reports/*" element={<Reports />} />
                         </Routes>
                     </div>
                 </div>
