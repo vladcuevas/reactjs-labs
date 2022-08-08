@@ -12,6 +12,10 @@ import DateRangeIcon from '@mui/icons-material/DateRange';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 
 import { Link } from 'react-router-dom';
+import {
+    Routes,
+    Route,
+} from "react-router-dom";
 
 function Reports() {
     return (
@@ -34,7 +38,6 @@ function Reports() {
                     <Col><Link to="datewisereport"><DateRangeIcon />Date wise report</Link></Col>
                 </Row>
             </Container>
-
         </>
     )
 }
