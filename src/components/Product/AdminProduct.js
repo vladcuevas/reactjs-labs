@@ -26,7 +26,7 @@ function AdminProduct({rowsPerPage}) {
   return (
     <div className="product">
       <div className="product__info">
-        <Link to="create/medicine/"><AddBoxIcon/>Create Medicine</Link>
+        <Link to="create/medicine/"><AddBoxIcon/>Add Medicine</Link>
         <table className={styles.table}>
           <thead className={styles.tableRowHeader}>
             <tr>
