@@ -2,12 +2,14 @@ import React from 'react'
 import './Header.css'
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import LocalPharmacyIcon from '@mui/icons-material/LocalPharmacy';
+import LogoutIcon from '@mui/icons-material/Logout';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from "react-router-dom"
 import { useStateValue } from '../../StateProvider'
 
 // react bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Logout from '../Login/SignOut';
 // end react bootstrap
 
 function AdminHeader() {
@@ -22,7 +24,6 @@ function AdminHeader() {
                 </div>
             </Link>
 
-
             <div className="header__search">
                 <input type="text" className="header__searchInput" />
                 <SearchIcon className="header__searchIcon" />
@@ -35,10 +36,10 @@ function AdminHeader() {
                         <span className="nav__itemLineTwo">Portal</span>
                     </div>
                 </Link>
-                <Link to="/checkout" style={{ textDecoration: "none" }}>
+                <Link to="/login/admin" logout="1" style={{ textDecoration: "none" }}>
                     <div className="nav__itemBasket">
-                        <ShoppingBasketIcon />
-                        <span className="nav__itemLineTwo nav__basketCount">{basket.length}</span>
+                        <LogoutIcon/>
+                        <span className="nav__itemLineTwo nav__basketCount">Logout</span>
                     </div>
                 </Link>
             </div>

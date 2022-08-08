@@ -40,6 +40,7 @@ function App() {
           <Route path="login/*" element={<Login />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
+        <br /><br /><br />
         <Footer />
       </BrowserRouter>
     </div>

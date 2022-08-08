@@ -41,7 +41,7 @@ export default [
         title: "Amazon Basic Care Aspirin 81 mg chewable tablets, orange flavor, 36 Count",
         price: 11.96,
         rating: 3,
-        image: "81YVywS0CBL._AC_UL480_QL65_.jpg",
+        image: "https://m.media-amazon.com/images/I/71t7cPGDAgL._AC_SL1500_.jpg",
     },
     {
         id: 1231222341,
