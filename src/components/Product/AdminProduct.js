@@ -6,12 +6,13 @@ import TableFooter from "../TableFooter";
 import { useStateValue } from "../../StateProvider";
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import productData from '../../data/products'
 
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import AddBoxIcon from '@mui/icons-material/AddBox';
 
 function AdminProduct({rowsPerPage}) {
   const [ state, dispatch ] = useStateValue()
@@ -25,6 +26,7 @@ function AdminProduct({rowsPerPage}) {
   return (
     <div className="product">
       <div className="product__info">
+        <Link to="create/medicine/"><AddBoxIcon/>Create Medicine</Link>
         <table className={styles.table}>
           <thead className={styles.tableRowHeader}>
             <tr>

@@ -2,19 +2,23 @@ import React, { useState } from "react";
 import "./Home.css"
 import "./AdminHome.css"
 import AdminProduct from '../Product/AdminProduct'
-import productData from '../../data/products'
+import CreateProduct from "../Product/CreateProduct";
 
-import Table from "../../components/Table";
+import {
+    Routes,
+    Route,
+} from "react-router-dom";
 
 function AdminHome() {
-    let Product = AdminProduct
-    
     return (
         <div>
             <div className="home">
                 <div className="home__container">
                     <div>
-                        <Table rowsPerPage={4} />
+                        <Routes>
+                            <Route path="/" element={<AdminProduct rowsPerPage={4} />} />
+                            <Route path="/create/medicine" element={<CreateProduct />} />
+                        </Routes>
                     </div>
                 </div>
             </div>
