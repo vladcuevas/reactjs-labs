@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import './CreateProduct.css'
+import './UpdateProduct.css'
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image'
 
-function CreateProduct() {
+function UpdateProduct() {
   const [file, setFile] = useState();
   function handleChange(e) {
     console.log(e.target.files);
@@ -14,7 +14,7 @@ function CreateProduct() {
 
   return (
     <>
-      <h1>Add Medicine</h1>
+      <h1>Update Medicine</h1>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicTitle">
           <Form.Label>Title</Form.Label>
@@ -73,4 +73,4 @@ function CreateProduct() {
   );
 }
 
-export default CreateProduct
+export default UpdateProduct

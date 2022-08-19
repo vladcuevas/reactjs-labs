@@ -30,6 +30,14 @@ function AdminProduct({ rowsPerPage }) {
   const [page, setPage] = useState(1);
   const { slice, range } = useTable(data, page, rowsPerPage);
 
+  const showAlert = () => {
+      if (window.confirm("Delete?"))
+      { 
+        alert("I'm deleting");
+      }
+    }
+
+
   return (
     <div className="product">
       <div className="product__info">
@@ -54,7 +62,8 @@ function AdminProduct({ rowsPerPage }) {
             {slice.map((el) => (
               <tr className={styles.tableRowItems} key={el.id}>
                 <td className={styles.tableCell}>
-                  <EditIcon className={styles.button}>Update</EditIcon><DeleteForeverIcon className={styles.button}>Delete</DeleteForeverIcon>
+                  <Link to="update/medicine/"><EditIcon className={styles.button}>Update</EditIcon></Link>
+                  <DeleteForeverIcon type='button' className={styles.button} onClick={showAlert}>Delete</DeleteForeverIcon>
                 </td>
                 <td className={styles.tableCell}>{el.title}</td>
                 <td className={styles.tableCell}><small>$</small>{el.price}</td>

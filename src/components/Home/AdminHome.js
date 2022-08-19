@@ -3,6 +3,7 @@ import "./Home.css"
 import "./AdminHome.css"
 import AdminProduct from '../Product/AdminProduct'
 import CreateProduct from "../Product/CreateProduct";
+import UpdateProduct from "../Product/UpdateProduct";
 import StockReport from "../../components/Admin/Reports/Stock"
 import SellsReport from "../../components/Admin/Reports/Sells"
 import MedicinesReport from "../../components/Admin/Reports/ProductsReport"
@@ -25,6 +26,7 @@ function AdminHome() {
                         <Routes>
                             <Route path="/" element={<AdminProduct rowsPerPage={4} />} />
                             <Route path="/create/medicine" element={<CreateProduct />} />
+                            <Route path="/update/medicine" element={<UpdateProduct />} />
                             <Route path="/reports/*" element={<Reports />} />
                             <Route path="/reports/stockreport" element={<StockReport />} />
                             <Route path="/reports/sellsreport" element={<SellsReport />} />

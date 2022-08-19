@@ -19,7 +19,7 @@ export default function Checkout() {
               title = {item.tile}
               image = {item.image}
               price = {item.price}
-              rating = {item.rating}
+              rating = {item.rating}              
             />
           ))}
         </div>
