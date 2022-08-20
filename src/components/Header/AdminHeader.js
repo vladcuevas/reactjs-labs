@@ -1,6 +1,6 @@
 import React from 'react'
 import './Header.css'
-import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+
 import LocalPharmacyIcon from '@mui/icons-material/LocalPharmacy';
 import LogoutIcon from '@mui/icons-material/Logout';
 import SearchIcon from '@mui/icons-material/Search';
@@ -9,7 +9,6 @@ import { useStateValue } from '../../StateProvider'
 
 // react bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Logout from '../Login/SignOut';
 // end react bootstrap
 
 function AdminHeader() {
@@ -30,13 +29,13 @@ function AdminHeader() {
             </div>
 
             <div className="header__nav">
-                <Link to="/login/admin" style={{ textDecoration: "none" }}>
+                <Link to="/admin" style={{ textDecoration: "none" }}>
                     <div className="nav__item">
                         <span className="nav__itemLineOne">Admin</span>
                         <span className="nav__itemLineTwo">Portal</span>
                     </div>
                 </Link>
-                <Link to="/login/admin" logout="1" style={{ textDecoration: "none" }}>
+                <Link to="/" logout="1" style={{ textDecoration: "none" }}>
                     <div className="nav__itemBasket">
                         <LogoutIcon/>
                         <span className="nav__itemLineTwo nav__basketCount">Logout</span>

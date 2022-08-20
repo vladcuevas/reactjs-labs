@@ -3,7 +3,12 @@ export default [
     {
         id: 12312341,
         title: "Amazon Basic Care Aspirin Pain Reliever and Fever Reducer (NSAID) 325 mg Coated Tablets 500 Count",
+        company_name: "Pfizer",
+        quantity: 4,
+        uses: 2,
+        expiration_date: "2022-09-01",
         price: 30.96,
+        discount: 10,
         rating: 5,
         image: "https://m.media-amazon.com/images/I/612IjsCW52L._AC_UL480_QL65_.jpg",
 

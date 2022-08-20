@@ -31,13 +31,14 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Header className="text-center" />} />
+          <Route path="/home" element={<Header className="text-center" />} />
           <Route path="/admin/home/*" element={<AdminHeader className="text-center" />} />
         </Routes>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/*" element={<Login />} />
+          <Route path="/home" element={<Home />} />
           <Route path="admin/home/*" element={<AdminHome />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="login/*" element={<Login />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <br /><br /><br />

@@ -14,29 +14,32 @@ import CustomerInfo from "../../components/Admin/CustomerInfo/CustomerInfo"
 import {
     Routes,
     Route,
+    useParams,
+    Outlet
 } from "react-router-dom";
 import Reports from "../Admin/Reports/Reports";
+import Customers from "../Admin/Customers/Customers";
 
 function AdminHome() {
     return (
-        <div>
-            <div className="home">
-                <div className="home__container">
-                    <div>
-                        <Routes>
-                            <Route path="/" element={<AdminProduct rowsPerPage={4} />} />
-                            <Route path="/create/medicine" element={<CreateProduct />} />
-                            <Route path="/update/medicine" element={<UpdateProduct />} />
-                            <Route path="/reports/*" element={<Reports />} />
-                            <Route path="/reports/stockreport" element={<StockReport />} />
-                            <Route path="/reports/sellsreport" element={<SellsReport />} />
-                            <Route path="/reports/productsreport" element={<MedicinesReport />} />
-                            <Route path="/reports/ordersreport" element={<OrdersReport />} />
-                            <Route path="/reports/datewisereport" element={<DateWiseReport />} />
-                            <Route path="/customerinfo" element={<CustomerInfo />} />
-                        </Routes>
-                    </div>
-                </div>
+        <div className="home">
+            <div className="div_100">
+                <Routes>
+                    <Route path="/" element={<AdminProduct rowsPerPage={4} />} >
+                        <Route path="/update/medicine/:productId" element={<UpdateProduct />} />
+                    </Route>
+                    <Route path="/create/medicine" element={<CreateProduct />} />
+                    <Route path="/reports/" element={<Reports />} >
+                        <Route path="/reports/stockreport" element={<StockReport />} />
+                        <Route path="/reports/sellsreport" element={<SellsReport />} />
+                        <Route path="/reports/productsreport" element={<MedicinesReport />} />
+                        <Route path="/reports/ordersreport" element={<OrdersReport />} />
+                        <Route path="/reports/datewisereport" element={<DateWiseReport />} />
+                    </Route>
+                    <Route path="/customers" element={<Customers rowsPerPage={4} />}>
+                        <Route path=":customerId" element={<CustomerInfo />} />
+                    </Route>
+                </Routes>
             </div>
         </div>
     )

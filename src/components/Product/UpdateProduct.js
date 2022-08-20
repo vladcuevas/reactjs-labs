@@ -5,6 +5,10 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image'
 
+import {
+  useParams,
+} from "react-router-dom";
+
 function UpdateProduct() {
   const [file, setFile] = useState();
   function handleChange(e) {
@@ -12,10 +16,13 @@ function UpdateProduct() {
     setFile(URL.createObjectURL(e.target.files[0]));
   }
 
+  let { productId } = useParams();
+
   return (
     <>
       <h1>Update Medicine</h1>
       <Form>
+        <Form.Label>Medicine {productId}</Form.Label>
         <Form.Group className="mb-3" controlId="formBasicTitle">
           <Form.Label>Title</Form.Label>
           <Form.Control type="text" placeholder="Enter medicine title" />
@@ -29,6 +36,11 @@ function UpdateProduct() {
         <Form.Group className="mb-3" controlId="formBasicPrice">
           <Form.Label>Price</Form.Label>
           <Form.Control type="number" placeholder="Price" />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicDiscount">
+          <Form.Label>Discount</Form.Label>
+          <Form.Control type="number" placeholder="Discount" />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicQuantity">

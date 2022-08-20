@@ -11,7 +11,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 import productData from '../../data/products'
 
@@ -37,7 +37,6 @@ function AdminProduct({ rowsPerPage }) {
       }
     }
 
-
   return (
     <div className="product">
       <div className="product__info">
@@ -45,7 +44,7 @@ function AdminProduct({ rowsPerPage }) {
           <Row>
             <Col><Link to="create/medicine/"><AddBoxIcon />Add Medicine</Link></Col>
             <Col><Link to="reports"><AssessmentIcon />Reports</Link></Col>
-            <Col><Link to="customerinfo"><GroupIcon />View Customer Info</Link></Col>
+            <Col><Link to="customers"><GroupIcon />View Customers Info</Link></Col>
           </Row>
         </Container>
         <table className={styles.table}>
@@ -53,20 +52,30 @@ function AdminProduct({ rowsPerPage }) {
             <tr>
               <th className={styles.tableHeader}></th>
               <th className={styles.tableHeader}>Title</th>
+              <th className={styles.tableHeader}>Company Name</th>
               <th className={styles.tableHeader}>Price</th>
+              <th className={styles.tableHeader}>Discount</th>
+              <th className={styles.tableHeader}>Quantity</th>
+              <th className={styles.tableHeader}>Uses</th>
+              <th className={styles.tableHeader}>Expiration Date</th>
               <th className={styles.tableHeader}>Rating</th>
               <th className={styles.tableHeader}>Image</th>
             </tr>
           </thead>
           <tbody>
             {slice.map((el) => (
-              <tr className={styles.tableRowItems} key={el.id}>
+              <tr className={styles.tableRowItems} key={el.id.toString()}>
                 <td className={styles.tableCell}>
-                  <Link to="update/medicine/"><EditIcon className={styles.button}>Update</EditIcon></Link>
+                  <Link to={'update/medicine/' + el.id.toString()}><EditIcon className={styles.button}>Update</EditIcon></Link>
                   <DeleteForeverIcon type='button' className={styles.button} onClick={showAlert}>Delete</DeleteForeverIcon>
                 </td>
                 <td className={styles.tableCell}>{el.title}</td>
+                <td className={styles.tableCell}>{el.company_name}</td>
                 <td className={styles.tableCell}><small>$</small>{el.price}</td>
+                <td className={styles.tableCell}><small>$</small>{el.discount}</td>
+                <td className={styles.tableCell}><small>$</small>{el.quantity}</td>
+                <td className={styles.tableCell}>{el.uses}</td>
+                <td className={styles.tableCell}>{el.expiration_date}</td>
                 <td className={styles.tableCell}>{el.rating}</td>
                 <td className={styles.tableCell}>{el.image}</td>
               </tr>
@@ -74,6 +83,7 @@ function AdminProduct({ rowsPerPage }) {
           </tbody>
         </table>
         <TableFooter range={range} slice={slice} setPage={setPage} page={page} />
+        <Outlet />
       </div>
     </div>
   )

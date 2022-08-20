@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "./firebase";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, Outlet, Routes, Route } from "react-router-dom";
 
 function UserLogin() {
 
@@ -13,46 +13,48 @@ function UserLogin() {
 
         signInWithEmailAndPassword(auth, email, password)
             .then(auth => {
-                navigate('/');
+                navigate('/home');
             })
             .catch(error => alert(error.message))
 
     }
 
-    const register = e => {
-        e.preventDefault();
+    function LogIn() {
+        return (
+            <>
+                <h1>Sign-in</h1>
+                <form>
+                    <h5>E-mail</h5>
+                    <input type='text' value={email} onChange={e => setEmail(e.target.value)} />
 
-        createUserWithEmailAndPassword(auth, email, password).then((auth) => {
-            if (auth) {
-                navigate('/');
-            }
-        })
-            .catch(error => alert(error.message))
+                    <h5>Password</h5>
+                    <input type='password' value={password} onChange={e => setPassword(e.target.value)} />
 
+                    <button type='submit' className='login__signInButton' onClick={signIn}>Sign In</button>
+                </form>
+                <hr></hr>
+                <div className='divider-break'>
+                    New to E-Healh?
+                </div>
+                <form action="signin">
+                    <button type='submit' className='login__registerButton'>Create Your E-Health Account</button>
+                </form>
+                
+            </>
+        )
     }
 
     return (
         <div className='login__container'>
-            <h1>Sign-in</h1>
-
-            <form>
-                <h5>E-mail</h5>
-                <input type='text' value={email} onChange={e => setEmail(e.target.value)} />
-
-                <h5>Password</h5>
-                <input type='password' value={password} onChange={e => setPassword(e.target.value)} />
-
-                <button type='submit' className='login__signInButton' onClick={signIn}>Sign In</button>
-            </form>
-
-            <p>
-                By signing-in you agree to the E-Health Website Conditions of Use & Sale. Please
-                see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
-            </p>
-
-            <button className='login__registerButton' onClick={register}>Create your eShop Account</button>
+            <Routes>
+                <Route path="/" element={<LogIn/>} />
+            </Routes>
+            <Outlet />
         </div>
     )
+
 }
+
+
 
 export default UserLogin

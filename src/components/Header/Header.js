@@ -28,13 +28,13 @@ function Header() {
             </div>
 
             <div className="header__nav">
-                <Link to="/login/user" style={{ textDecoration: "none" }}>
+                <Link to="/" style={{ textDecoration: "none" }}>
                     <div className="nav__item">
                         <span className="nav__itemLineOne">Hello Guest</span>
                         <span className="nav__itemLineTwo">Sign In</span>
                     </div>
                 </Link>
-                <Link to="/login/admin" style={{ textDecoration: "none" }}>
+                <Link to="/admin" style={{ textDecoration: "none" }}>
                     <div className="nav__item">
                         <span className="nav__itemLineOne">Admin</span>
                         <span className="nav__itemLineTwo">Portal</span>

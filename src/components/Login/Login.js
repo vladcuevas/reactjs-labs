@@ -1,12 +1,13 @@
 import React from 'react';
 import './Login.css'
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import {
     Routes,
     Route,
 } from "react-router-dom";
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import UserLogin from './UserLogin';
+import SingIn from './SingIn';
 import AdminLogin from './AdminLogin';
 
 function Login() {
@@ -19,10 +20,12 @@ function Login() {
                     <h2 className="login__logoTitle">E-Health</h2>
                 </div>
             </Link>
+            <Outlet />
             <Routes>
-                <Route path="user" element={<UserLogin />} />
-                <Route path="admin" element={<AdminLogin />} />
-                <Route path="logout" element={<AdminLogin />} />
+                <Route path="/" element={<UserLogin />} >
+                    <Route path="signin" element={<SingIn/>} />
+                    <Route path="admin" element={<AdminLogin />} />
+                </Route>
             </Routes>
         </div>
     )

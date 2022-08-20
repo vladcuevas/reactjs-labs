@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom';
 import {
     Routes,
     Route,
+    Outlet
 } from "react-router-dom";
 
 function Reports() {
@@ -23,21 +24,15 @@ function Reports() {
             <Container fluid>
                 <Row><Col><h1>Reports</h1></Col></Row>
                 <Row>
-                    <Col><Link to="stockreport"><ShowChartIcon/>Stock reports</Link></Col>
-                </Row>
-                <Row>
-                    <Col><Link to="sellsreport"><SellIcon />Sells reports</Link></Col>
-                </Row>
-                <Row>
-                    <Col><Link to="productsreport"><LocalPharmacyIcon />Medicines reports</Link></Col>
-                </Row>
-                <Row>                    
-                    <Col><Link to="ordersreport"><RequestQuoteIcon />Orders reports</Link></Col>
-                </Row>
-                <Row>
-                    <Col><Link to="datewisereport"><DateRangeIcon />Date wise report</Link></Col>
+                    <Col md="auto"><Link to="stockreport"><ShowChartIcon/>Stock reports</Link></Col>
+                    <Col md="auto"><Link to="sellsreport"><SellIcon />Sells reports</Link></Col>
+                    <Col md="auto"><Link to="productsreport"><LocalPharmacyIcon />Medicines reports</Link></Col>
+                    <Col md="auto"><Link to="ordersreport"><RequestQuoteIcon />Orders reports</Link></Col>
+                    <Col md="auto"><Link to="datewisereport"><DateRangeIcon />Date wise report</Link></Col>
                 </Row>
             </Container>
+            <hr/>
+            <Outlet />
         </>
     )
 }
