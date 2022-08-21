@@ -8,7 +8,7 @@ https://youtu.be/tIZIkNvLESY
 
 # Requirements
 
-Rename firebase-back.js to firebase.js and fill the below keys with your values from firebase:
+Rename firebase-back.js from src/components/Login to firebase.js and fill the below keys with your values from firebase:
 
 ```json
 const firebaseConfig = {
