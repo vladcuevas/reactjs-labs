@@ -12,7 +12,7 @@
 }
 
 .login__logoImage {
-    color: #ff9f00;
+    color: #00c3ff;
 }
 
 .login__logoTitle {
@@ -51,7 +51,7 @@
 }
 
 .login__signInButton {
-    background: #ff9f00;
+    background: #00c3ff;
     border-radius: 2px;
     width: 100%;
     height: 30px;

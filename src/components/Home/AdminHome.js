@@ -19,9 +19,12 @@ import {
 } from "react-router-dom";
 import Reports from "../Admin/Reports/Reports";
 import Customers from "../Admin/Customers/Customers";
+import AdminHeader from "../Header/AdminHeader";
 
 function AdminHome() {
     return (
+        <>
+        <AdminHeader className="text-center" />
         <div className="home">
             <div className="div_100">
                 <Routes>
@@ -42,6 +45,7 @@ function AdminHome() {
                 </Routes>
             </div>
         </div>
+        </>
     )
 }
 

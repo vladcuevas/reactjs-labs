@@ -4,6 +4,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Outlet,
 } from "react-router-dom";
 
 // react bootstrap
@@ -19,10 +20,12 @@ import AdminHome from './components/Home/AdminHome'
 import Login from './components/Login/Login';
 import Footer from './components/Footer/Footer'
 import Checkout from './components/Checkout/Checkout';
+import Orders from './components/Orders/Orders'
 import ErrorPage from './components/ErrorPage';
 
 // react bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Payment from './components/Checkout/Payment/Payment';
 // end react bootstrap
 
 function App() {
@@ -30,15 +33,12 @@ function App() {
     <div className='App'>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Header className="text-center" />} />
-          <Route path="/home" element={<Header className="text-center" />} />
-          <Route path="/admin/home/*" element={<AdminHeader className="text-center" />} />
-        </Routes>
-        <Routes>
           <Route path="/*" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="admin/home/*" element={<AdminHome />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/checkout/payment" element={<Payment />}/>
+          <Route path="/orders" element={<Orders />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <br /><br /><br />

@@ -11,7 +11,7 @@
 .header__logo {
     display: flex;
     align-items: center;
-    color: #ff9f00;
+    color: #00c3ff;
     margin: 0 25px;
 }
 
@@ -43,7 +43,7 @@
 .header__searchIcon {
     padding: 5px;
     height: 22px !important;
-    background-color: #ff9f00;
+    background-color: #00c3ff;
 }
 
 .header__nav {

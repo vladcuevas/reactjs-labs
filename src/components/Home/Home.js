@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import "./Home.css"
 import Product from '../Product/Product'
+import UserHeader from '../Header/UserHeader'
 import productData from '../../data/products'
 import useTable from "../../hooks/useTable";
+
+import { Link, Outlet, Routes, Route, } from "react-router-dom";
 
 function Home() {
 
@@ -27,9 +30,13 @@ function Home() {
     let arrs = sliceIntoChunks(slice, 2)
 
     return (
+        <>
+        <Routes>
+          <Route path="/" element={<UserHeader className="text-center" />} />
+         </Routes>
         <div className="home">
             <div className="home__container">
-                <img src="https://www.x-cart.com/wp-content/uploads/2019/01/ecommerce-768x278.jpg" alt="" className="home__image" />
+                <img src="https://www.lsretail.com/hs-fs/hubfs/BLOG_-ecommerce-and-the-cloud.jpg?width=1239&height=620&name=BLOG_-ecommerce-and-the-cloud.jpg" alt="" className="home__image" />
 
                 {arrs.map((slice_home) => (
                     <div className="home__row">
@@ -46,6 +53,7 @@ function Home() {
                 ))}
             </div>
         </div>
+        </>
     )
 }
 

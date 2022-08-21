@@ -1,18 +1,17 @@
 import React from 'react'
 import './Header.css'
-
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import LocalPharmacyIcon from '@mui/icons-material/LocalPharmacy';
-import LogoutIcon from '@mui/icons-material/Logout';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link, Routes, Route } from "react-router-dom"
 import { useStateValue } from '../../StateProvider'
-import AdminPortalLink from './AdminPortalLink';
 
+import AdminPortalLink from './AdminPortalLink';
 // react bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css'
 // end react bootstrap
 
-function AdminHeader() {
+function Header() {
     const [{ basket }, dispatch] = useStateValue()
 
     return (
@@ -30,13 +29,24 @@ function AdminHeader() {
             </div>
 
             <div className="header__nav">
-                <Routes>
-                    <Route path='/' element={<AdminPortalLink />} />
-                </Routes>
-                <Link to="/" logout="1" style={{ textDecoration: "none" }}>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                    <div className="nav__item">
+                        <span className="nav__itemLineOne">Hello Guest</span>
+                        <span className="nav__itemLineTwo">Sign In</span>
+                    </div>
+                </Link>
+
+                <Link to="/orders" style={{ textDecoration: "none" }}>
+                    <div className="nav__item">
+                        <span className="nav__itemLineOne">Status of</span>
+                        <span className="nav__itemLineTwo">My Orders</span>
+                    </div>
+                </Link>
+
+                <Link to="/checkout" style={{ textDecoration: "none" }}>
                     <div className="nav__itemBasket">
-                        <LogoutIcon/>
-                        <span className="nav__itemLineTwo nav__basketCount">Logout</span>
+                        <ShoppingBasketIcon />
+                        <span className="nav__itemLineTwo nav__basketCount">{basket.length}</span>
                     </div>
                 </Link>
             </div>
@@ -44,4 +54,4 @@ function AdminHeader() {
     )
 }
 
-export default AdminHeader
+export default Header

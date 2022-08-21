@@ -5,7 +5,8 @@ import { useStateValue } from '../../../StateProvider'
 import { getBasketTotal } from '../../../reducer'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 function Subtotal() {
   const [{basket}, dispatch] = useStateValue()
@@ -30,7 +31,7 @@ function Subtotal() {
         thousandSeparator={true}
         />
 
-      <Button>Proceed to Checkout</Button>
+        <Link to='payment'><Button>Proceed to Checkout</Button></Link>
     </div>
   )
 }
