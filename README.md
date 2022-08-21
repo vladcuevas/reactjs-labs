@@ -1,5 +1,7 @@
 # React JS Labs
 
+Code can be found in the below link:
+
 https://github.com/vladcuevas/reactjs-labs
 
 A video of the ReactJS page can be found in the below link:
