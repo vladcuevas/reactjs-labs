@@ -2,6 +2,10 @@
 
 https://github.com/vladcuevas/reactjs-labs
 
+A video of the ReactJS page can be found in the below link:
+
+https://youtu.be/tIZIkNvLESY
+
 # Requirements
 
 Rename firebase-back.js to firebase.js and fill the below keys with your values from firebase:
@@ -25,3 +29,5 @@ Log in with the user
 # Start the application
 
 npm start
+
+Log with the user created as admin, or create a user in the main page
